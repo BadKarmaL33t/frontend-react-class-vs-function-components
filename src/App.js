@@ -4,10 +4,9 @@ import './App.css';
 function App() {
     const [light, toggleLight] = useState(true);
 
-    function handleClick()  {
+    function handleClick() {
         toggleLight(!light);
     }
-
 
     return (
         <button
@@ -16,7 +15,7 @@ function App() {
         >
             {light ? 'AAN' : 'UIT'}
         </button>
-  );
+    );
 }
 
 export default App;
