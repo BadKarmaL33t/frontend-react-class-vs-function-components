@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-  return (
-    <div>
-      Schrijf hier jouw functie-component!
-    </div>
+    const [light, toggleLight] = useState(true);
+
+    function handleClick()  {
+        toggleLight(!light);
+    }
+
+
+    return (
+        <button
+            type="button"
+            onClick={handleClick}
+        >
+            {light ? 'AAN' : 'UIT'}
+        </button>
   );
 }
 

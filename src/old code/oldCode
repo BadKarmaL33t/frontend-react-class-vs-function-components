@@ -1,0 +1,36 @@
+class App extends React.Component {
+
+// de constructor haalt met super(props) de property op die wordt doorgegeven uit het hoger liggende component
+// vervolgens zet de constructor de state van deze property op true
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLightOn: true
+    };
+
+// de property word gebonden aan handleClick
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+
+// Hierna kan handleClick worden uitgewerkt als functie om het licht aan en uit te zetten
+  handleClick() {
+    this.setState({
+      isLightOn: !this.state.isLightOn,
+    });
+  }
+
+// Hierna kan de button met de bijhorende properties en functie worden gerenderd
+  render() {
+    return (
+      <button
+        type="button"
+        onClick={this.handleClick}
+      >
+        {this.state.isLightOn ? 'AAN' : 'UIT'}
+      </button>
+    );
+  }
+}
+
+export default App;
